@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tungnath: The Road to the Highest Shiva Temple | ShifoyAge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --snow-white: #fefefe;
+            --forest-green: #1a4d3a;
+            --saffron-yellow: #ff9500;
+            --earthy-brown: #8b4513;
+            --mountain-blue: #2c5282;
+            --mist-gray: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--snow-white) 0%, var(--mist-gray) 100%);
+            color: var(--earthy-brown);
+        }
+        
+        .heading-font { font-family: 'Playfair Display', serif; }
+        .script-font { font-family: 'Dancing Script', cursive; }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(26, 77, 58, 0.4), rgba(139, 69, 19, 0.6)), 
+                        url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=2070&auto=format&fit=crop') center/cover;
+            background-attachment: fixed;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Parallax sections */
+        .parallax-section {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            min-height: 60vh;
+        }
+        
+        .day1-bg { background-image: linear-gradient(rgba(44, 82, 130, 0.7), rgba(26, 77, 58, 0.7)), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2070&auto=format&fit=crop'); }
+        .day2-bg { background-image: linear-gradient(rgba(26, 77, 58, 0.7), rgba(255, 149, 0, 0.5)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop'); }
+        .day3-bg { background-image: linear-gradient(rgba(255, 149, 0, 0.6), rgba(139, 69, 19, 0.7)), url('https://images.unsplash.com/photo-1571115764595-644a1f56a55c?q=80&w=2070&auto=format&fit=crop'); }
+        .day4-bg { background-image: linear-gradient(rgba(44, 82, 130, 0.6), rgba(226, 232, 240, 0.5)), url('https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?q=80&w=2070&auto=format&fit=crop'); }
+        
+        /* Floating prayer flags */
+        .prayer-flag {
+            position: absolute;
+            width: 30px;
+            height: 20px;
+            animation: prayerFloat 15s ease-in-out infinite;
+            opacity: 0.6;
+            z-index: 1;
+        }
+        
+        @keyframes prayerFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(2deg); }
+            66% { transform: translateY(-10px) rotate(-2deg); }
+        }
+        
+        /* Mountain mist effect */
+        .mountain-mist {
+            position: absolute;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.3) 50%, 
+                transparent 100%);
+            height: 100px;
+            width: 200%;
+            animation: mistFlow 20s linear infinite;
+            opacity: 0.4;
+        }
+        
+        @keyframes mistFlow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        /* Journey cards with spiritual touch */
+        .journey-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--saffron-yellow);
+            border-radius: 20px;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .journey-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 149, 0, 0.1) 50%, 
+                transparent 100%);
+            transition: left 0.6s ease;
+        }
+        
+        .journey-card:hover::before {
+            left: 100%;
+        }
+        
+        .journey-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(255, 149, 0, 0.2);
+            border-color: var(--forest-green);
+        }
+        
+        /* Sacred geometry decoration */
+        .sacred-circle {
+            width: 80px;
+            height: 80px;
+            border: 3px solid var(--saffron-yellow);
+            border-radius: 50%;
+            position: relative;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, var(--snow-white), var(--mist-gray));
+        }
+        
+        .sacred-circle::before {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            border: 2px solid var(--forest-green);
+            border-radius: 50%;
+        }
+        
+        /* Scroll animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Om symbol animation */
+        .om-symbol {
+            color: var(--saffron-yellow);
+            font-size: 2rem;
+            animation: omPulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes omPulse {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-section, .parallax-section {
+                background-attachment: scroll;
+                min-height: 70vh;
+            }
+            
+            .prayer-flag {
+                display: none;
+            }
+            
+            .mountain-mist {
+                height: 50px;
+            }
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--mist-gray);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, var(--saffron-yellow), var(--forest-green));
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, var(--forest-green), var(--saffron-yellow));
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Prayer Flags -->
+    <div class="prayer-flag bg-red-500" style="top: 15%; left: 10%; animation-delay: 0s;"></div>
+    <div class="prayer-flag bg-blue-500" style="top: 20%; right: 15%; animation-delay: 2s;"></div>
+    <div class="prayer-flag bg-green-500" style="bottom: 30%; left: 5%; animation-delay: 4s;"></div>
+    <div class="prayer-flag bg-yellow-500" style="bottom: 25%; right: 10%; animation-delay: 6s;"></div>
+    <div class="prayer-flag bg-purple-500" style="top: 40%; left: 85%; animation-delay: 8s;"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section flex items-center justify-center relative">
+        <!-- Mountain mist effects -->
+        <div class="mountain-mist" style="top: 20%; animation-delay: 0s;"></div>
+        <div class="mountain-mist" style="top: 40%; animation-delay: 5s;"></div>
+        <div class="mountain-mist" style="top: 60%; animation-delay: 10s;"></div>
+        
+        <div class="relative z-10 text-center px-6 max-w-6xl">
+            <div class="mb-8">
+                <div class="om-symbol mb-6">ॐ</div>
+                <p class="text-lg md:text-xl font-light tracking-widest uppercase mb-4" style="color: var(--saffron-yellow);">
+                    ✨ ShifoyAge Presents ✨
+                </p>
+            </div>
+            
+            <h1 class="heading-font text-4xl md:text-7xl lg:text-8xl font-bold mb-8 text-white leading-tight">
+                Tungnath
+            </h1>
+            
+            <div class="mb-12">
+                <p class="text-2xl md:text-4xl font-light italic mb-6 text-yellow-100">
+                    The Road to the Highest Shiva Temple
+                </p>
+                <div class="w-32 h-0.5 mx-auto" style="background: linear-gradient(to right, var(--saffron-yellow), var(--snow-white));"></div>
+            </div>
+            
+            <div class="text-lg md:text-xl text-gray-100 max-w-4xl mx-auto leading-relaxed mb-12">
+                <p class="script-font text-2xl italic mb-6">
+                    "Every step is a prayer, every view a blessing."
+                </p>
+                <p class="font-light">
+                    From Bhopal to the Himalayas — 5 days of road trips, treks, 
+                    and moments that stay with you forever in your soul.
+                </p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <a href="#journey-details" class="px-8 py-4 rounded-full text-white font-semibold transform hover:scale-105 transition-all duration-300 shadow-2xl" 
+                   style="background: linear-gradient(45deg, var(--saffron-yellow), var(--forest-green));">
+                    🚗 Book the Journey
+                </a>
+                <div class="text-yellow-200 font-semibold">
+                    📞 9893114556 | 9990854146
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 fade-in-up">
+                <div class="sacred-circle">
+                    <span class="text-2xl">🏔️</span>
+                </div>
+                <h2 class="heading-font text-4xl md:text-5xl font-bold mb-8" style="color: var(--forest-green);">
+                    Where Heaven Meets Earth
+                </h2>
+                <div class="max-w-4xl mx-auto text-lg leading-relaxed">
+                    <p class="mb-6 text-gray-700">
+                        Tungnath isn't just the world's highest Shiva temple at 3,680 meters — it's a pilgrimage of the soul. 
+                        Here, every winding mountain road tells a story, every sunrise over the Himalayas whispers ancient secrets, 
+                        and every shared moment around a campfire becomes a memory etched in eternity.
+                    </p>
+                    <p class="mb-8 text-gray-700">
+                        This isn't about conquering peaks; it's about discovering the journey within the journey. 
+                        From midnight train conversations to misty morning chai, from rhododendron-lined trails to 
+                        the mirror-like stillness of Deoria Tal — we believe in <em>small groups, big hearts, and deep travel</em>.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4 text-sm font-semibold">
+                        <span class="px-4 py-2 rounded-full border-2" style="border-color: var(--saffron-yellow); color: var(--forest-green);">🚂 Train Adventures</span>
+                        <span class="px-4 py-2 rounded-full border-2" style="border-color: var(--forest-green); color: var(--saffron-yellow);">🏔️ Sacred Treks</span>
+                        <span class="px-4 py-2 rounded-full border-2" style="border-color: var(--saffron-yellow); color: var(--forest-green);">🔥 Campfire Nights</span>
+                        <span class="px-4 py-2 rounded-full border-2" style="border-color: var(--forest-green); color: var(--saffron-yellow);">💫 Soul Moments</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Day-by-Day Journey -->
+    <section class="py-20">
+        <div class="text-center mb-16 px-6">
+            <h2 class="heading-font text-4xl md:text-5xl font-bold mb-6" style="color: var(--earthy-brown);">
+                The Sacred Journey Unfolds
+            </h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                Five days of transformation, told like the travel journal you'll want to write home about
+            </p>
+        </div>
+
+        <!-- Day 1: The Beginning -->
+        <div class="parallax-section day1-bg mb-20">
+            <div class="absolute inset-0 flex items-center">
+                <div class="max-w-6xl mx-auto px-6 w-full">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="slide-in-left">
+                            <div class="journey-card p-8">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4" style="background: linear-gradient(45deg, var(--saffron-yellow), var(--forest-green));">
+                                        <span class="text-white font-bold text-lg">1</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="heading-font text-2xl font-bold" style="color: var(--forest-green);">The Journey Begins</h3>
+                                        <p class="script-font text-lg" style="color: var(--saffron-yellow);">Bhopal → Delhi</p>
+                                    </div>
+                                </div>
+                                <div class="border-l-4 pl-6 mb-6" style="border-color: var(--saffron-yellow);">
+                                    <p class="text-gray-700 leading-relaxed mb-4">
+                                        Midnight departure from Bhopal Junction — the adventure starts with that first whistle. 
+                                        Train snacks, travel games, and the first glimpses of friendships that will last beyond this trip.
+                                    </p>
+                                    <div class="text-sm font-medium space-y-1" style="color: var(--forest-green);">
+                                        <p>🚂 <strong>Evening:</strong> Depart Bhopal by train</p>
+                                        <p>🌙 <strong>Night:</strong> Journey to Delhi with new travel companions</p>
+                                        <p>☕ <strong>Experience:</strong> Midnight chai, window seat stories</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-in-right text-white text-center">
+                            <div class="script-font text-3xl mb-4">
+                                "Every great journey begins with a single step... 
+                                <br>or in our case, a train ticket"
+                            </div>
+                            <p class="text-lg opacity-90">
+                                Watch the Indian countryside roll by as strangers become friends 
+                                and the city lights fade into adventure.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 2: Sacred Confluences -->
+        <div class="parallax-section day2-bg mb-20">
+            <div class="absolute inset-0 flex items-center">
+                <div class="max-w-6xl mx-auto px-6 w-full">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="slide-in-left text-white text-center">
+                            <div class="script-font text-3xl mb-4">
+                                "Where rivers meet, souls connect,
+                                <br>and the real journey begins"
+                            </div>
+                            <p class="text-lg opacity-90">
+                                From sacred confluences to starlit camps — 
+                                today we trade city sounds for mountain whispers.
+                            </p>
+                        </div>
+                        <div class="slide-in-right">
+                            <div class="journey-card p-8">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4" style="background: linear-gradient(45deg, var(--forest-green), var(--saffron-yellow));">
+                                        <span class="text-white font-bold text-lg">2</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="heading-font text-2xl font-bold" style="color: var(--forest-green);">Sacred Waters & Mountain Roads</h3>
+                                        <p class="script-font text-lg" style="color: var(--saffron-yellow);">Delhi → Chopta</p>
+                                    </div>
+                                </div>
+                                <div class="border-l-4 pl-6 mb-6" style="border-color: var(--forest-green);">
+                                    <p class="text-gray-700 leading-relaxed mb-4">
+                                        Early morning Delhi pickup leads to the magnificent Devprayag confluence — 
+                                        where the Alaknanda and Bhagirathi rivers unite to form the holy Ganga. 
+                                        Then it's winding mountain roads to Chopta, our Himalayan base camp.
+                                    </p>
+                                    <div class="text-sm font-medium space-y-1" style="color: var(--forest-green);">
+                                        <p>🌅 <strong>Morning:</strong> Delhi pickup & mountain road journey</p>
+                                        <p>🌊 <strong>Afternoon:</strong> Devprayag confluence darshan</p>
+                                        <p>🏕️ <strong>Evening:</strong> Arrive Chopta, bonfire under the stars</p>
+                                        <p>🍛 <strong>Meals:</strong> Lunch, dinner & mountain hospitality</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 3: The Sacred Summit -->
+        <div class="parallax-section day3-bg mb-20">
+            <div class="absolute inset-0 flex items-center">
+                <div class="max-w-6xl mx-auto px-6 w-full">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="slide-in-left">
+                            <div class="journey-card p-8">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4" style="background: linear-gradient(45deg, var(--saffron-yellow), var(--earthy-brown));">
+                                        <span class="text-white font-bold text-lg">3</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="heading-font text-2xl font-bold" style="color: var(--forest-green);">The Highest Calling</h3>
+                                        <p class="script-font text-lg" style="color: var(--saffron-yellow);">Tungnath & Chandrashila</p>
+                                    </div>
+                                </div>
+                                <div class="border-l-4 pl-6 mb-6" style="border-color: var(--earthy-brown);">
+                                    <p class="text-gray-700 leading-relaxed mb-4">
+                                        Today is the day your soul has been waiting for. The trek to Tungnath Temple (3,680m) — 
+                                        the world's highest Shiva temple — through rhododendron forests and ancient paths. 
+                                        For the brave-hearted, continue to Chandrashila peak for 360° Himalayan views.
+                                    </p>
+                                    <div class="text-sm font-medium space-y-1" style="color: var(--forest-green);">
+                                        <p>🚶‍♂️ <strong>Morning:</strong> Early trek to Tungnath Temple (3.5 km)</p>
+                                        <p>🙏 <strong>Spiritual:</strong> Darshan at world's highest Shiva temple</p>
+                                        <p>⛰️ <strong>Optional:</strong> Continue to Chandrashila Summit (1.5 km)</p>
+                                        <p>☕ <strong>Reward:</strong> Hot chai with Himalayan views</p>
+                                        <p>🌅 <strong>Views:</strong> Nanda Devi, Kedarnath, Chaukhamba peaks</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-in-right text-white text-center">
+                            <div class="script-font text-3xl mb-4">
+                                "At 3,680 meters, prayers feel closer to heaven
+                                <br>and every breath is a blessing"
+                            </div>
+                            <p class="text-lg opacity-90">
+                                Stand where ancient sages meditated, where Shiva's energy flows strongest, 
+                                and where your heart finds its highest calling.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 4: Mirror of the Soul -->
+        <div class="parallax-section day4-bg mb-20">
+            <div class="absolute inset-0 flex items-center">
+                <div class="max-w-6xl mx-auto px-6 w-full">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="slide-in-left text-white text-center">
+                            <div class="script-font text-3xl mb-4">
+                                "In still waters, we see not just reflections,
+                                <br>but revelations of who we've become"
+                            </div>
+                            <p class="text-lg opacity-90">
+                                Deoria Tal mirrors more than mountains — 
+                                it reflects the transformation within.
+                            </p>
+                        </div>
+                        <div class="slide-in-right">
+                            <div class="journey-card p-8">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4" style="background: linear-gradient(45deg, var(--mountain-blue), var(--saffron-yellow));">
+                                        <span class="text-white font-bold text-lg">4</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="heading-font text-2xl font-bold" style="color: var(--forest-green);">The Mirror Lake</h3>
+                                        <p class="script-font text-lg" style="color: var(--saffron-yellow);">Deoria Tal & Return</p>
+                                    </div>
+                                </div>
+                                <div class="border-l-4 pl-6 mb-6" style="border-color: var(--mountain-blue);">
+                                    <p class="text-gray-700 leading-relaxed mb-4">
+                                        Morning trek to the jewel of the Himalayas — Deoria Tal. This pristine lake perfectly 
+                                        mirrors the mighty Chaukhamba peaks, creating moments of such beauty they feel surreal. 
+                                        Perfect for meditation, photography, and finding your inner peace.
+                                    </p>
+                                    <div class="text-sm font-medium space-y-1" style="color: var(--forest-green);">
+                                        <p>🌅 <strong>Early Morning:</strong> Trek to Deoria Tal (2.5 km)</p>
+                                        <p>🏔️ <strong>Views:</strong> Perfect Chaukhamba reflections</p>
+                                        <p>📷 <strong>Moments:</strong> Sunrise photography & meditation</p>
+                                        <p>🚗 <strong>Afternoon:</strong> Return journey to Delhi begins</p>
+                                        <p>🌙 <strong>Evening:</strong> Overnight journey to Bhopal</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 5: The Circle Completes -->
+        <div class="py-16 px-6" style="background: linear-gradient(135deg, var(--mist-gray), var(--snow-white));">
+            <div class="max-w-4xl mx-auto text-center fade-in-up">
+                <div class="journey-card p-12">
+                    <div class="flex items-center justify-center mb-6">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center" style="background: linear-gradient(45deg, var(--forest-green), var(--saffron-yellow));">
+                            <span class="text-white font-bold text-2xl">5</span>
+                        </div>
+                    </div>
+                    <h3 class="heading-font text-3xl font-bold mb-6" style="color: var(--forest-green);">
+                        Delhi to Bhopal: The Circle Completes
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                        The train wheels sing a different song on the way back — filled with memories, photographs, 
+                        and stories that will last a lifetime. Share contact numbers, make future travel plans, 
+                        and carry home a piece of the Himalayas in your heart.
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-6 text-sm font-medium" style="color: var(--forest-green);">
+                        <div class="text-center">
+                            <div class="text-2xl mb-2">💝</div>
+                            <p><strong>Morning:</strong> Delhi to Bhopal departure</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl mb-2">📱</div>
+                            <p><strong>Journey:</strong> Photo sharing & future plans</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl mb-2">🏠</div>
+                            <p><strong>Evening:</strong> Arrive Bhopal with transformed hearts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights & Experiences -->
+    <section class="py-20 px-6" style="background: linear-gradient(135deg, var(--forest-green), var(--mountain-blue));">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="heading-font text-4xl md:text-5xl font-bold mb-6 text-white">
+                    Moments That Make the Journey
+                </h2>
+                <p class="text-xl text-yellow-100 max-w-3xl mx-auto">
+                    These aren't just experiences — they're chapters in your travel story
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 text-center transform hover:scale-105 transition-all duration-300 fade-in-up">
+                    <div class="text-4xl mb-4">🔥</div>
+                    <h3 class="heading-font text-xl font-bold mb-4" style="color: var(--forest-green);">Campfire Conversations</h3>
+                    <p class="text-gray-700">
+                        Under star-studded Himalayan skies, share stories, dreams, and laughter 
+                        that kindle friendships warmer than any campfire.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 text-center transform hover:scale-105 transition-all duration-300 fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="text-4xl mb-4">☕</div>
+                    <h3 class="heading-font text-xl font-bold mb-4" style="color: var(--forest-green);">Chai with Mountain Views</h3>
+                    <p class="text-gray-700">
+                        Every cup tastes different at 3,000+ meters — infused with fresh mountain air, 
+                        accomplishment, and pure Himalayan magic.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 text-center transform hover:scale-105 transition-all duration-300 fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="text-4xl mb-4">🌸</div>
+                    <h3 class="heading-font text-xl font-bold mb-4" style="color: var(--forest-green);">Rhododendron Trails</h3>
+                    <p class="text-gray-700">
+                        Walk through nature's own temple — ancient rhododendron forests that bloom 
+                        in spring with colors that no camera can truly capture.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 text-center transform hover:scale-105 transition-all duration-300 fade-in-up" style="animation-delay: 0.6s;">
+                    <div class="text-4xl mb-4">❄️</div>
+                    <h3 class="heading-font text-xl font-bold mb-4" style="color: var(--forest-green);">Snow Kisses (Seasonal)</h3>
+                    <p class="text-gray-700">
+                        In winter months, experience the surreal beauty of snow-capped peaks 
+                        and maybe even catch snowflakes on the highest temple steps.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 text-center transform hover:scale-105 transition-all duration-300 fade-in-up" style="animation-delay: 0.8s;">
+                    <div class="text-4xl mb-4">👥</div>
+                    <h3 class="heading-font text-xl font-bold mb-4" style="color: var(--forest-green);">Local Connections</h3>
+                    <p class="text-gray-700">
+                        Meet mountain folk whose smiles are warmer than city crowds, 
+                        whose stories are richer than any guidebook.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 text-center transform hover:scale-105 transition-all duration-300 fade-in-up" style="animation-delay: 1s;">
+                    <div class="text-4xl mb-4">🕉️</div>
+                    <h3 class="heading-font text-xl font-bold mb-4" style="color: var(--forest-green);">Spiritual Silence</h3>
+                    <p class="text-gray-700">
+                        At Tungnath, experience a silence so profound it speaks louder than words — 
+                        where prayers feel like conversations with the universe.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing & Dates -->
+    <section class="py-20 px-6" id="journey-details" style="background: linear-gradient(135deg, var(--snow-white), var(--mist-gray));">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="heading-font text-4xl md:text-5xl font-bold mb-6" style="color: var(--forest-green);">
+                    Your Sacred Journey Awaits
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Choose your departure city and join us for this transformative Himalayan experience
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <!-- Bhopal to Bhopal Package -->
+                <div class="journey-card p-10 text-center fade-in-up">
+                    <div class="mb-6">
+                        <div class="text-4xl mb-4">🚂</div>
+                        <h3 class="heading-font text-2xl font-bold mb-2" style="color: var(--forest-green);">Bhopal to Bhopal</h3>
+                        <p class="text-sm text-gray-600">Complete train + trek experience</p>
+                    </div>
+                    
+                    <div class="text-center mb-8">
+                        <div class="text-4xl font-bold mb-2" style="color: var(--saffron-yellow);">₹12,999</div>
+                        <p class="text-sm text-gray-600">Per Person (Sharing basis)</p>
+                        <p class="text-xs text-green-600 mt-2">⚡ Early Bird: ₹11,499 (Book 30 days in advance)</p>
+                    </div>
+
+                    <div class="space-y-3 text-left mb-8">
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span>Train tickets both ways (Bhopal-Delhi-Bhopal)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span>All road transfers & trek transport</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span>4 nights accommodation + all meals</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span>Professional trek guide & safety equipment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delhi to Delhi Package -->
+                <div class="journey-card p-10 text-center fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="mb-6">
+                        <div class="text-4xl mb-4">🚗</div>
+                        <h3 class="heading-font text-2xl font-bold mb-2" style="color: var(--forest-green);">Delhi to Delhi</h3>
+                        <p class="text-sm text-gray-600">Pure mountain & trek experience</p>
+                    </div>
+                    
+                    <div class="text-center mb-8">
+                        <div class="text-4xl font-bold mb-2" style="color: var(--saffron-yellow);">₹8,999</div>
+                        <p class="text-sm text-gray-600">Per Person (Sharing basis)</p>
+                        <p class="text-xs text-green-600 mt-2">⚡ Early Bird: ₹7,999 (Book 30 days in advance)</p>
+                    </div>
+
+                    <div class="space-y-3 text-left mb-8">
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span>Delhi pickup & drop included</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span>All road transfers & trek transport</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span>3 nights accommodation + meals</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-3">✓</span>
+                            <span>Professional trek guide & safety equipment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming Dates -->
+            <div class="text-center mb-12">
+                <h3 class="heading-font text-3xl font-bold mb-8" style="color: var(--forest-green);">Upcoming Journeys</h3>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="journey-card p-6 text-center">
+                        <div class="text-lg font-bold mb-2" style="color: var(--saffron-yellow);">March 2025</div>
+                        <p class="text-sm">15-19 March</p>
+                        <p class="text-sm">22-26 March</p>
+                        <p class="text-xs text-green-600 mt-2">Best for rhododendron blooms</p>
+                    </div>
+                    <div class="journey-card p-6 text-center">
+                        <div class="text-lg font-bold mb-2" style="color: var(--saffron-yellow);">April 2025</div>
+                        <p class="text-sm">5-9 April</p>
+                        <p class="text-sm">19-23 April</p>
+                        <p class="text-xs text-green-600 mt-2">Perfect weather & clear views</p>
+                    </div>
+                    <div class="journey-card p-6 text-center">
+                        <div class="text-lg font-bold mb-2" style="color: var(--saffron-yellow);">May 2025</div>
+                        <p class="text-sm">3-7 May</p>
+                        <p class="text-sm">17-21 May</p>
+                        <p class="text-xs text-green-600 mt-2">Warm days, cool nights</p>
+                    </div>
+                    <div class="journey-card p-6 text-center">
+                        <div class="text-lg font-bold mb-2" style="color: var(--saffron-yellow);">October 2025</div>
+                        <p class="text-sm">4-8 Oct</p>
+                        <p class="text-sm">18-22 Oct</p>
+                        <p class="text-xs text-green-600 mt-2">Post-monsoon crystal views</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Call to Action -->
+    <section class="py-20 px-6" style="background: linear-gradient(135deg, var(--forest-green), var(--earthy-brown));">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <div class="mb-12">
+                <div class="text-6xl mb-6">🏔️</div>
+                <h2 class="heading-font text-4xl md:text-5xl font-bold mb-8">
+                    The Road to Tungnath is Calling
+                </h2>
+                <p class="script-font text-2xl md:text-3xl mb-8 text-yellow-200">
+                    "Will you answer?"
+                </p>
+                <p class="text-lg leading-relaxed max-w-3xl mx-auto mb-12 text-gray-100">
+                    Every sacred journey begins with a single brave step. Your Himalayan adventure, 
+                    your spiritual awakening, your lifelong memories are just a booking away. 
+                    Don't let this calling go unanswered.
+                </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
+                <a href="https://wa.me/919893114556" target="_blank" 
+                   class="px-10 py-4 rounded-full font-semibold transform hover:scale-105 transition-all duration-300 shadow-2xl text-lg"
+                   style="background: linear-gradient(45deg, var(--saffron-yellow), #ff6b35); color: white;">
+                    🚗 Reserve My Seat
+                </a>
+                <a href="#" class="px-10 py-4 rounded-full border-2 border-white text-white font-semibold hover:bg-white hover:text-black transform hover:scale-105 transition-all duration-300 text-lg">
+                    📄 Download PDF Itinerary
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 text-center">
+                <div>
+                    <div class="text-2xl mb-2">📞</div>
+                    <h3 class="font-bold text-lg mb-2">Call Us Now</h3>
+                    <p class="text-yellow-200">9893114556 | 9990854146</p>
+                    <p class="text-sm text-gray-300 mt-1">Available 9 AM - 8 PM</p>
+                </div>
+                <div>
+                    <div class="text-2xl mb-2">💬</div>
+                    <h3 class="font-bold text-lg mb-2">WhatsApp Support</h3>
+                    <p class="text-yellow-200">Instant responses & quick bookings</p>
+                    <p class="text-sm text-gray-300 mt-1">Share this page with friends!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Notes -->
+    <section class="py-16 px-6 bg-red-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="heading-font text-3xl font-bold text-red-800 mb-4">Important Booking Information</h2>
+                <p class="text-red-600">Please read carefully before booking</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <span class="text-red-500 text-xl mr-3 mt-1">⚠️</span>
+                        <div>
+                            <h4 class="font-bold text-red-800 mb-1">Fitness Requirements</h4>
+                            <p class="text-sm text-gray-700">Moderate fitness required. 3.5km trek to Tungnath + optional 1.5km to Chandrashila summit.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-red-500 text-xl mr-3 mt-1">🌡️</span>
+                        <div>
+                            <h4 class="font-bold text-red-800 mb-1">Weather Dependency</h4>
+                            <p class="text-sm text-gray-700">Mountain weather can change quickly. Carry warm clothes regardless of season.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-red-500 text-xl mr-3 mt-1">🎒</span>
+                        <div>
+                            <h4 class="font-bold text-red-800 mb-1">Gear Requirements</h4>
+                            <p class="text-sm text-gray-700">Proper trekking shoes, warm clothing, rain gear essential. Detailed list provided upon booking.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <span class="text-red-500 text-xl mr-3 mt-1">💰</span>
+                        <div>
+                            <h4 class="font-bold text-red-800 mb-1">Cancellation Policy</h4>
+                            <p class="text-sm text-gray-700">30+ days: 10% deduction | 15-29 days: 25% | 7-14 days: 50% | <7 days: 100%</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-red-500 text-xl mr-3 mt-1">🏥</span>
+                        <div>
+                            <h4 class="font-bold text-red-800 mb-1">Travel Insurance</h4>
+                            <p class="text-sm text-gray-700">Highly recommended. Not included in package. Covers medical emergencies & evacuation.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-red-500 text-xl mr-3 mt-1">📅</span>
+                        <div>
+                            <h4 class="font-bold text-red-800 mb-1">Age Restrictions</h4>
+                            <p class="text-sm text-gray-700">Recommended for ages 16-65. Minors must be accompanied by guardians.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-yellow-100 border border-yellow-400 rounded-lg p-6 mt-8">
+                <div class="flex items-start">
+                    <span class="text-yellow-600 text-2xl mr-4">💡</span>
+                    <div>
+                        <h4 class="font-bold text-yellow-800 mb-2">Pro Tips for Your Journey</h4>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li>• Book early bird offers 30 days in advance for best prices</li>
+                            <li>• Carry glucose/energy bars for trek energy boosts</li>
+                            <li>• Download offline maps as network may be patchy</li>
+                            <li>• Bring power banks - charging points are limited in mountains</li>
+                            <li>• Pack light but smart - every gram counts on trek day</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6" style="background: var(--forest-green); color: white;">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="mb-8">
+                <h2 class="heading-font text-3xl font-bold mb-4 text-yellow-400">ShifoyAge</h2>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+                    Creating transformative travel experiences, one sacred journey at a time. 
+                    Where every trip becomes a chapter in your life story.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="font-bold text-lg mb-4 text-yellow-400">Quick Links</h3>
+                    <div class="space-y-2 text-sm">
+                        <p><a href="#" class="hover:text-yellow-400 transition-colors">All Destinations</a></p>
+                        <p><a href="#" class="hover:text-yellow-400 transition-colors">About ShifoyAge</a></p>
+                        <p><a href="#" class="hover:text-yellow-400 transition-colors">Travel Stories</a></p>
+                        <p><a href="#" class="hover:text-yellow-400 transition-colors">Group Bookings</a></p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-lg mb-4 text-yellow-400">Support</h3>
+                    <div class="space-y-2 text-sm">
+                        <p>📧 hello@shifoyage.com</p>
+                        <p>📞 +91 98931 14556</p>
+                        <p>📱 +91 99908 54146</p>
+                        <p>🕐 Support: 9 AM - 8 PM</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-lg mb-4 text-yellow-400">Follow Our Journey</h3>
+                    <div class="space-y-2 text-sm">
+                        <p><a href="#" class="hover:text-yellow-400 transition-colors">📷 Instagram Stories</a></p>
+                        <p><a href="#" class="hover:text-yellow-400 transition-colors">📘 Facebook Updates</a></p>
+                        <p><a href="#" class="hover:text-yellow-400 transition-colors">🐦 Twitter Tales</a></p>
+                        <p><a href="#" class="hover:text-yellow-400 transition-colors">📺 YouTube Adventures</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-600 pt-8">
+                <p class="text-sm text-gray-400">
+                    © 2025 ShifoyAge. All rights reserved. | Made with ❤️ for mountain lovers and soul seekers.
+                </p>
+                <p class="text-xs text-gray-500 mt-2">
+                    "The mountains are calling and I must go" - John Muir
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animation elements
+        document.querySelectorAll('.fade-in-up, .slide-in-left, .slide-in-right').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero-section');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Dynamic prayer flag colors
+        const prayerFlags = document.querySelectorAll('.prayer-flag');
+        const colors = ['bg-red-500', 'bg-blue-500', 'bg-green-500', 'bg-yellow-500', 'bg-purple-500'];
+        
+        setInterval(() => {
+            prayerFlags.forEach(flag => {
+                flag.className = `prayer-flag ${colors[Math.floor(Math.random() * colors.length)]}`;
+            });
+        }, 10000);
+
+        // Add some sparkle to the hero section
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.innerHTML = '✨';
+            sparkle.style.position = 'absolute';
+            sparkle.style.left = Math.random() * window.innerWidth + 'px';
+            sparkle.style.top = Math.random() * window.innerHeight + 'px';
+            sparkle.style.fontSize = '20px';
+            sparkle.style.opacity = '0';
+            sparkle.style.transition = 'all 2s ease';
+            sparkle.style.pointerEvents = 'none';
+            sparkle.style.zIndex = '1000';
+            
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.style.opacity = '1';
+                sparkle.style.transform = 'translateY(-50px)';
+            }, 100);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 2000);
+        }
+
+        // Create sparkles occasionally
+        setInterval(createSparkle, 5000);
+
+        console.log('🏔️ Tungnath: The Road to the Highest Shiva Temple | ShifoyAge ✨');
+        console.log('Every step is a prayer, every view a blessing 🙏');
+    </script>
+
+</body>
+</html>
